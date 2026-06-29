@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+        }
+
+        .box {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d68910;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>✏️ Edit Student</h2>
+
+    <form method="POST">
+
+        <input type="text" name="name" value="{{ student[1] }}" required>
+
+        <input type="email" name="email" value="{{ student[2] }}" required>
+
+        <input type="text" name="course" value="{{ student[3] }}" required>
+
+        <button type="submit">Update Student</button>
+
+    </form>
+
+    <a class="back" href="/students">⬅ Back to Students</a>
+
+</div>
+
+</body>
+</html>

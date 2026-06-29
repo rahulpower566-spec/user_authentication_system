@@ -1,10 +1,10 @@
-# User Authentication System
+# Student CRUD Management System
 
 ## Project Overview
 
-The User Authentication System is a Full Stack Web Application developed using **Python, Flask, SQLite, HTML, and CSS**. This application allows users to register, log in securely, access a dashboard, and log out of the system.
+The Student CRUD Management System is a Full Stack Web Application developed using **Python, Flask, SQLite, HTML, and CSS**. This application allows authenticated users to manage student records by performing **Create, Read, Update, and Delete (CRUD)** operations.
 
-The project demonstrates the implementation of authentication mechanisms commonly used in real-world web applications.
+The project demonstrates the implementation of user authentication along with CRUD functionality, which is commonly used in real-world web applications for efficient data management.
 
 ---
 
@@ -14,6 +14,10 @@ The project demonstrates the implementation of authentication mechanisms commonl
 - User Login
 - User Logout
 - Session Management
+- Add Student
+- View Student Records
+- Update Student Details
+- Delete Student Records
 - SQLite Database Integration
 - Dashboard Access for Authenticated Users
 - Responsive User Interface
@@ -46,31 +50,36 @@ The project demonstrates the implementation of authentication mechanisms commonl
 ## Project Structure
 
 ```text
-user_authentication_system/
+
+student-crud-management/
 │
 ├── app.py
 ├── create_db.py
 ├── database.db
 │
 ├── templates/
-│   ├── register.html
 │   ├── login.html
-│   └── dashboard.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── add_student.html
+│   ├── students.html
+│   └── edit_student.html
 │
 ├── static/
 │   └── style.css
 │
 └── README.md
+
 ```
 
 ---
 
-## Authentication Flow
+## Application Flow
 
 ### User Registration
 
-1. User enters username and password.
-2. Flask receives registration data.
+1. User enters a username and password.
+2. Flask receives the registration data.
 3. User details are stored in the SQLite database.
 4. User is redirected to the Login page.
 
@@ -81,10 +90,13 @@ user_authentication_system/
 3. If valid, a session is created.
 4. User is redirected to the Dashboard.
 
-### Dashboard
+### Student Management
 
-1. Only authenticated users can access the dashboard.
-2. The dashboard displays a welcome message.
+1. Authenticated users can access the student management dashboard.
+2. Users can add new student records.
+3. Users can view all student records.
+4. Users can edit existing student details.
+5. Users can delete student records from the database.
 
 ### Logout
 
@@ -92,14 +104,17 @@ user_authentication_system/
 2. Session data is removed.
 3. User is redirected to the Login page.
 
+---
+
 ## Learning Outcomes
 
 Through this project, I learned:
 
 - Flask Routing
-- Authentication Systems
+- User Authentication
 - Session Handling
 - SQLite Database Operations
+- CRUD (Create, Read, Update, Delete) Operations
 - Frontend and Backend Integration
 - Full Stack Web Development Fundamentals
 
@@ -108,8 +123,9 @@ Through this project, I learned:
 ## Future Enhancements
 
 - Password Hashing using Werkzeug
-- Forgot Password Functionality
-- Email Verification
-- User Profile Management
+- Student Search Functionality
+- Pagination for Student Records
+- Student Profile with Image Upload
 - Role-Based Authentication
 - REST API Integration
+- Responsive Dashboard Improvements

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .top-btn {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .top-btn a {
+            background: #3498db;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .edit {
+            background: #f39c12;
+            color: white;
+            padding: 6px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .delete {
+            background: #e74c3c;
+            color: white;
+            padding: 6px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .edit:hover {
+            background: #d68910;
+        }
+
+        .delete:hover {
+            background: #c0392b;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    📋 Students Management
+</div>
+
+<div class="container">
+
+    <h2>Students List</h2>
+
+    <div class="top-btn">
+        <a href="/add">➕ Add Student</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s[0] }}</td>
+            <td>{{ s[1] }}</td>
+            <td>{{ s[2] }}</td>
+            <td>{{ s[3] }}</td>
+            <td>
+                <a class="edit" href="/edit/{{ s[0] }}">Edit</a>
+                <a class="delete" href="/delete/{{ s[0] }}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <a class="back" href="/dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

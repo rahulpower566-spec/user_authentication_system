@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f2f5;
+        }
+
+        .box {
+            width: 350px;
+            margin: 80px auto;
+            background: white;
+            padding: 55px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e8449;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>➕ Add Student</h2>
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Enter Name" required>
+
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <input type="text" name="course" placeholder="Enter Course" required>
+
+        <button type="submit">Save Student</button>
+
+    </form>
+
+    <a class="back" href="/dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
